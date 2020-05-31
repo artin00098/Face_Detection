@@ -1,7 +1,7 @@
-const bcrypt = require('bcrypt-nodejs');
-
 const handleRegister = (req,res,db,bcrypt)=>{
+	console.log(req.body);
 	const {email , name , password} = req.body;
+	res.send(req.body);
 	if (!email || !name || !password ) {
 		return res.status(400).json('bad registration')
 	}

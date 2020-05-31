@@ -11,12 +11,10 @@ const image = require('./controllers/image');
 const http = require('http');
 const db = knex ({
   client: 'pg',
-  connection :{
 	  connectionString: process.env.DATABASE_URL,
 	  ssl: {
 	    rejectUnauthorized: false
 	  }
-	}
 });
 
 app.use(bodyParser.json());
@@ -33,6 +31,6 @@ app.get('/profile/:id',(req,res)=> {profile.handleProfile(req,res,db)})
 app.put('/image',(req,res)=> {image.handleImage(req,res,db)})
 // // ========== listen ===============
 
-app.listen(process.env.PORT || 3000 ,()=>{
+app.listen(3000 ,()=>{
 	console.log(`app is running on port 3000`);
 })
