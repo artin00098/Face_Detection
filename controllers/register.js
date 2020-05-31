@@ -1,9 +1,8 @@
 const handleRegister = (req,res,db,bcrypt)=>{
-	db = db.json();
-	res.send(db('users').insert({
+	db('users').insert({
 		email:email,
 		password : password
-	}));
+	}).then(response => response.json()).then(fuck=> res.send(fuck))
 	const {email , name , password} = req.body;
 	// if (!email || !name || !password ) {
 	// 	return res.status(400).json('bad registration')
