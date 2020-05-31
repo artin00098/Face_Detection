@@ -12,9 +12,7 @@ const http = require('http');
 const db = knex ({
   client: 'pg',
 	  	connectionString: process.env.DATABASE_URL,
-	  	ssl: {
-	  	    rejectUnauthorized: false
-	  	  }
+	  	ssl: true
 });
 
 app.use(bodyParser.json());
