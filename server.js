@@ -25,7 +25,7 @@ app.get('/',(req,res)=>{
 // =============== sign in ================
 app.post('/signin',(req,res)=>{signin.handleSignin(req,res,db,bcrypt)})
 // ================ register ===============
-// app.post('/register',(req,res)=>{register.handleRegister(req,res,db,bcrypt)})
+app.post('/register',(req,res)=>{register.handleRegister(req,res,db,bcrypt)})
 //============= id get ==============
 app.get('/profile/:id',(req,res)=> {profile.handleProfile(req,res,db)})
 app.put('/image',(req,res)=> {image.handleImage(req,res,db)})
