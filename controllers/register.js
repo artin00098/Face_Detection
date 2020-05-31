@@ -1,10 +1,13 @@
 const handleRegister = (req,res,db,bcrypt)=>{
-	res.send(db.json(user[0]));
-	const {email , name , password} = req.body;
-	if (!email || !name || !password ) {
-		return res.status(400).json('bad registration')
-	}
-	const hash = bcrypt.hashSync(password);
+	res.send(db('users').insert({
+		email:email,
+		password : password
+	}));
+	// const {email , name , password} = req.body;
+	// if (!email || !name || !password ) {
+	// 	return res.status(400).json('bad registration')
+	// }
+	// const hash = bcrypt.hashSync(password);
 	// 	db.transaction(trx =>{
 	// 		trx.insert({
 	// 			hash : hash,

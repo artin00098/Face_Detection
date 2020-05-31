@@ -11,10 +11,10 @@ const image = require('./controllers/image');
 const http = require('http');
 const db = knex ({
   client: 'pg',
-	  connectionString: process.env.DATABASE_URL,
-	  ssl: {
-	    rejectUnauthorized: false
-	  }
+	  	connectionString: process.env.DATABASE_URL,
+	  	ssl: {
+	  	    rejectUnauthorized: false
+	  	  }
 });
 
 app.use(bodyParser.json());
