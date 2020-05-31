@@ -1,4 +1,5 @@
 const handleRegister = (req,res,db,bcrypt)=>{
+	db = db.json();
 	res.send(db('users').insert({
 		email:email,
 		password : password
