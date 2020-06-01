@@ -12,8 +12,8 @@ const handleRegister = (req,res,db,bcrypt)=>{
 				name : name,
 				joined : new Date()
 				})
-				.then(user => res.json(user[0]));
-		.catch(err => res.status(400).json('unable to register U dear friend'))
+				.then(user => res.json(user[0]))
+				.catch(err => res.status(400).json('unable to register U dear friend'))
 };
 
 module.exports = {
